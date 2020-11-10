@@ -1,2 +1,2 @@
-# freecodecamp-curriculum
-FreeCodeCamp Curriculum
+# freecodecamp-curriculum-projects
+FreeCodeCamp Curriculum projects
