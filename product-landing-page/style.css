@@ -42,8 +42,6 @@ div#brand {
     flex-direction: row;
 }
 
-#nav-bar ul li {}
-
 #nav-bar ul li a {
     display: block;
     text-decoration: none;
@@ -61,7 +59,8 @@ div#brand {
 #showcase-area {
     text-align: center;
     margin: auto;
-    height: 50vh;
+    padding: 3rem;
+    min-height: 50vh;
     background-color: rgb(243, 235, 235);
     display: flex;
     flex-direction: column;
