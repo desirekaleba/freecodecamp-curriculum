@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Vendor -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <!-- Main style -->
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Personal Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div>
+                <h1>Desire K.</h1>
+            </div>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="welcome-section">
+            <h1 class="fz-3">Hi, I am <span class="clr-sec">Desire Kaleba</span></h1>
+            <h2><span class="fw-3">A web developer</span></h2>
+        </section>
+        <h2 class="text-center">These are some of my projects</h2>
+        <section id="projects">
+            <div class="project">
+                <img src="./assets/img/product-landing-page.JPG" alt="product_landing_page" class="project-img">
+                <h3 class="project-title">Product Landing Page</h3>
+                <a class="project-repo">GitHub</a>
+                <a class="project-view">View</a>
+            </div>
+            <div class="project">
+                <img src="./assets/img/js-technical-documentation.JPG" alt="js_technical_documentation"
+                    class="project-img">
+                <h3 class="project-title">JS technical Documentaion</h3>
+                <a class="project-repo">GitHub</a>
+                <a class="project-view">View</a>
+            </div>
+            <div class="project">
+                <img src="./assets/img/survey-form.JPG" alt="survey_form" class="project-img">
+                <h3 class="project-title">Survey Form</h3>
+                <a class="project-repo">GitHub</a>
+                <a class="project-view">View</a>
+            </div>
+            <div class="project">
+                <img src="./assets/img/tribute-page.JPG" alt="tribute_page" class="project-img">
+                <h3 class="project-title">Tribute Page</h3>
+                <a class="project-repo">GitHub</a>
+                <a class="project-view">View</a>
+            </div>
+        </section>
+        <h2 class="text-center contact-title">Let's get in touch</h2>
+        <section id="contact">
+            <form id="form" action="">
+                <div class="form-element">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Ex: John Doe">
+                </div>
+                <div class="form-element">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control"
+                        placeholder="Ex: johndoe@gmail.com">
+                </div>
+                <div class="form-element">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="5" class="form-control"
+                        placeholder="Message body..."></textarea>
+                </div>
+                <div class="form-element">
+                    <input type="submit" value="Send" class="btn-send">
+                </div>
+            </form>
+            <h3 class="text-center mt-3">Follow me</h3>
+            <div id="social">
+                <a href=""><i class="fab fa-github-square"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-linkedin"></i></a>
+                <a href=""><i class="fab fa-facebook"></i></a>
+                <a href=""><i class="fas fa-envelope-open-text"></i></a>
+                <a href=""><i class="fas fa-phone-volume"></i></a>
+            </div>
+        </section>
+        <footer id="footer">&copy; Desire Kaleba</footer>
+    </main>
+</body>
+
+</html>
