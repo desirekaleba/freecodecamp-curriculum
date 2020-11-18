@@ -1,0 +1,16 @@
+COLOR Scheme
+_____________
+
+Dark Blue: #12232E -> Primary
+
+Lighter Blue: #007CC7 -> Secondary
+
+Lightest Blue: #4DA8DA -> Ternary
+
+-------------------------
+Unused
+______
+
+Shadow of Dark Blue: #203647
+
+Shadow of Light Blue: #EEFBFB

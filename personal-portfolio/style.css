@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web');
+
+
+:root {
+    --primary-color: #12232E;
+    --secondary-color: #007CC7;
+    --ternary-color: #4DA8DA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-family: 'Titillium Web',
+        sans-serif;
+}
+
+.clr-sec {
+    color: #007CC7;
+    color: var(--secondary-color);
+}
+
+.fz-3 {
+    font-size: 3rem;
+}
+
+.fw-3 {
+    font-weight: 300;
+}
+
+.text-center {
+    text-align: center;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #12232E;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0 1rem;
+
+}
+
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbar ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+#navbar ul li a:hover {
+    background-color: #007CC7;
+    background-color: var(--secondary-color);
+}
+
+#welcome-section {
+    background-color: #142835;
+    width: auto;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+}
+
+#projects {
+    margin-top: 3rem;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+
+.project {
+    background-color: #142835;
+    color: white;
+    padding-bottom: 1rem;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+}
+
+.project .project-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.project-repo,
+.project-view {
+    text-decoration: none;
+    display: block;
+    border: 1px solid white;
+    width: 70%;
+    margin: auto;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.project-repo:hover,
+.project-view:hover {
+    background-color: #007CC7;
+}
+
+#contact {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+
+
+#form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+input[type='text'],
+input[type='email'] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #12232E;
+    padding: 8px 0;
+    outline: none;
+}
+
+textarea {
+    min-width: 100%;
+    padding: 8px;
+    margin-top: 1rem;
+    border: 1px solid #12232E;
+    outline: none;
+}
+
+.form-control {
+    display: block;
+}
+
+.form-element {
+    margin-top: 1rem;
+}
+
+.form-element label {
+    font-weight: bold;
+}
+
+.contact-title {
+    margin-top: 3rem;
+}
+
+.btn-send {
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    background-color: #12232E;
+    padding: 8px 12px;
+    border: none;
+    outline: none;
+}
+
+.btn-send:hover {
+    background-color: #142835;
+    border: 2px solid #12232E;
+    cursor: pointer;
+}
+
+#social {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 4rem;
+
+}
+
+#social a {
+    color: #12232E;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+footer {
+    background-color: #12232E;
+    color: white;
+    padding: 2rem;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    #projects {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 767px) {
+    #projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (min-width: 1024px) {
+    #projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
