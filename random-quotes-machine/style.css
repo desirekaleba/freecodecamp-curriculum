@@ -4,21 +4,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    line-height: 1.8;
+    line-height: 1.6;
     font-family: 'Tenali Ramakrishna', sans-serif;
     transition: all 0.3s ease-in-out;
 }
 
+body {
+    background-color: rgba(0, 0, 255, 0.563);
+}
+
 .quote-box {
-    width: 90%;
+    width: 80%;
     margin: 10% auto auto auto;
-    background-color: #bbffef;
+    background-color: #ffffff;
     border-radius: 1rem;
-    padding: 1rem 3rem;
+    padding: 1rem;
 }
 
 .quote-text {
     text-align: center;
+    color: rgba(0, 0, 255, 0.563);
 }
 
 .text {
@@ -35,6 +40,13 @@
 .quote-author h5 {
     font-size: 1.5rem;
     font-weight: 500;
+    color: rgba(0, 0, 255, 0.563);
+}
+
+.quote-author h5::before {
+    content: '-';
+    width: 1rem;
+    margin-right: 9px;
 }
 
 .buttons {

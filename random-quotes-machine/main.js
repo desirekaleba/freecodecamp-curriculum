@@ -4,6 +4,7 @@ let retweetURL = '';
 
 function fetchQuote() {
     $("#text").text("Loading...");
+    $("#author").text("");
     $.ajax({
         headers: {
             "Accept": "application/json"
