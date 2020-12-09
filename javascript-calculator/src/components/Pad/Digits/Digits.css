@@ -1,0 +1,18 @@
+#digits {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.digit {
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    background-color: rgb(2, 2, 28);
+    outline: none;
+    cursor: pointer;
+    color: white;
+    padding: 0.4rem;
+    border: 1px solid white;
+}

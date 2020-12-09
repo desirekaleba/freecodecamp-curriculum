@@ -1,8 +1,10 @@
+import './Screen.css';
+
 const Screen = (props) => {
     return (
         <div>
             <div id="display">
-                {props.input}<br/>
+                <span className="input">{props.input}</span><br/>
                 {props.result}
             </div>
         </div>
