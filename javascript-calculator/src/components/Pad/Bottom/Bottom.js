@@ -1,6 +1,8 @@
+import './Bottom.css';
+
 const Bottom = (props) => {
     return (
-        <div>
+        <div id="bottom">
             <button id="decimal" value="." onClick={props.handleInput}>.</button>
             <button id="equals" value="=" onClick={props.handleInput}>=</button>
         </div>
