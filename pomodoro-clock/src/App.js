@@ -149,8 +149,11 @@ countdown( parent, minutes, seconds )
           <p id="time-left">{this.state.timeLeft}</p>
         </div>
         <button id="start_stop" onClick={this.playPause}>
-          <i class="fa fa-play" aria-hidden="true"></i>
-          <i class="fa fa-pause" aria-hidden="true"></i>
+          {
+            this.state.sessionState === 'running'
+              ?<i class="fa fa-pause" aria-hidden="true"></i>
+              : <i class="fa fa-play" aria-hidden="true"></i>
+          }
         </button>
         <button id="reset" onClick={this.reset}>
           <i class="fa fa-retweet" aria-hidden="true"></i>
