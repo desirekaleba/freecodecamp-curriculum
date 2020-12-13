@@ -123,7 +123,7 @@ countdown( parent, minutes, seconds )
 
   render() {
     return (
-      <div>
+      <div id="main-app">
         <div id="break">
           <label id="break-label">Break Length</label>
           <br />
@@ -146,7 +146,11 @@ countdown( parent, minutes, seconds )
           </button>
           <p id="session-length">{this.state.sessionLength}</p>
           <label id="timer-label">Session ({this.state.sessionState})</label>
-          <p id="time-left">{this.state.timeLeft}</p>
+          <p id="time-left">
+            {this.state.timeLeft === '' 
+            ? this.state.sessionLength + ':00' 
+            : this.state.timeLeft}
+          </p>
         </div>
         <button id="start_stop" onClick={this.playPause}>
           {
