@@ -1,5 +1,5 @@
-const { Component } = require("react");
-
+import React, { Component } from 'react';
+import './App.css';
 class App extends Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
