@@ -24,19 +24,26 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
-app.get('/api/timestamp/2020-12-26', function (req, res) {
-
-  res.json({
-    unix: 1609010338488,
-    utc: new Date(1609010338488).toUTCString()
-  });
+app.get("/api/timestamp/", (req, res) => {
+  res.json({ unix: Date.now(), utc: Date() });
 });
 
-app.get('/api/timestamp/1609010338488', function (req, res) {
-    res.json({
-    unix: 1609010338488,
-    utc: new Date(1609010338488).toUTCString()
-  });
+app.get("/api/timestamp/:date_string", (req, res) => {
+  let dateString = req.params.date_string;
+
+  if (/\d{5,}/.test(dateString)) {
+    const dateInt = parseInt(dateString);
+    //Date regards numbers as unix timestamps, strings are processed differently
+    res.json({ unix: dateInt, utc: new Date(dateInt).toUTCString() });
+  } else {
+    let dateObject = new Date(dateString);
+
+    if (dateObject.toString() === "Invalid Date") {
+      res.json({ error: "Invalid Date" });
+    } else {
+      res.json({ unix: dateObject.valueOf(), utc: dateObject.toUTCString() });
+    }
+  }
 });
 
 
