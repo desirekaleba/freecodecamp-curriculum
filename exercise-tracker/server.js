@@ -93,7 +93,8 @@ app.post('/api/exercise/new-user', function (req, res) {
     UserModel.findOne({
       username: username
     }, function (err, data) {
-      if (data.username) {
+      if (err) console.error(err);
+      if (data !== null) {
         res.json({
           error: 'Username taken'
         });
