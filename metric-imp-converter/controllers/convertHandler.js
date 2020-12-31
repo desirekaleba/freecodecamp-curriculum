@@ -6,10 +6,8 @@
 *       
 */
 
-function ConvertHandler() {
-
   const units = {
-  'gal': ['gallons', 'l', v =>  v * 3.785],
+  'gal': ['gallons', 'L', v =>  v * 3.785],
   'l': ['liters', 'gal', v => v / 3.785],
   'mi': ['miles', 'km', v => v * 1.609],
   'km': ['kilometers', 'mi', v => v / 1.609],
@@ -18,6 +16,8 @@ function ConvertHandler() {
   'cm': ['centimeters', 'in', v => v * 0.3937],
   'in': ['inches', 'cm', v => v / 0.3937]
 };
+
+function ConvertHandler() {
   
   this.getNum = function(input) {
     let result;
@@ -25,20 +25,31 @@ function ConvertHandler() {
     const unit = input.split(/[\d.?/?]+/)[1];
     result = input.substring(0, input.indexOf(unit));
 
-    if (!result) result = 1;
+    if (/\/{2,}/.test(result)) 
+      result = 'Invalid Input';
+    if (!result) result = 'No Numerical Input';
 
-    return eval(result);
+    return result === 'Invalid Input'
+      || result === 'No Numerical Input'
+      ? result
+      : eval(result);
   };
   
   this.getUnit = function(input) {
+    let result;
+    let unit = input.split(/[\d.?/?]+/);
 
-    let result = input.split(/[\d.?/?]+/)[1];
-    
+    if (unit.length > 1) {
+      result = unit[1].toLowerCase();
+    } else {
+      result = input.toLowerCase();
+    }
     const validUnits = Object.keys(units);
-    
-    return validUnits.includes(result.toLowerCase()) 
+    const output = validUnits.includes(result) 
         ? result 
-        : 'Invalid Unit';
+        : 'Unknown Unit Input';
+
+    return output;
   };
   
   this.getReturnUnit = function(initUnit) {
@@ -47,9 +58,9 @@ function ConvertHandler() {
 
     let unit = this.getUnit(initUnit).toLowerCase();
 
-    result = (unit && unit !== 'invalid unit')
-      ? units[unit][1] 
-      : 'Invalid Unit';
+    result = (unit && unit !== 'unknown unit input')
+      ? units[unit][1]
+      : 'Unknown Unit Input';
     
     return result;
   };
@@ -60,9 +71,9 @@ function ConvertHandler() {
 
     let unit = this.getUnit(inputUnit).toLowerCase();
 
-    result = (unit && unit !== 'invalid unit')
+    result = (unit && unit !== 'unknown unit input')
               ? units[unit][0]
-              : 'Invalid Unit';
+              : 'Unknown Unit Input';
     
     return result;
   };
@@ -73,8 +84,8 @@ function ConvertHandler() {
     
     const newUnit = this.getUnit('' + initNum + initUnit).toLowerCase();
     
-    result = (newUnit && newUnit !== 'invalid unit')
-        ? units[newUnit][2](eval(initNum)) : 'Invalid Unit';
+    result = (newUnit && newUnit !== 'unknown unit input')
+        ? units[newUnit][2](eval(initNum)) : 'Unknown Unit Input';
     
     return result;
   };
