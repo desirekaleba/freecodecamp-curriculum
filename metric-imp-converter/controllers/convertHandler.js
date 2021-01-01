@@ -25,10 +25,10 @@ function ConvertHandler() {
     const unit = input.split(/[\d.?/?]+/)[1];
     result = input.substring(0, input.indexOf(unit));
 
-    if (/\/{2,}/.test(result)) 
+    if (/\/.*\//.test(result)) 
       result = 'Invalid Input';
     if (!result) result = 'No Numerical Input';
-
+    console.log('GetNumReturn', result);
     return result === 'Invalid Input'
       || result === 'No Numerical Input'
       ? result
@@ -38,7 +38,6 @@ function ConvertHandler() {
   this.getUnit = function(input) {
     let result;
     let unit = input.split(/[\d.?/?]+/);
-
     if (unit.length > 1) {
       result = unit[1].toLowerCase();
     } else {
@@ -48,7 +47,7 @@ function ConvertHandler() {
     const output = validUnits.includes(result) 
         ? result 
         : 'Unknown Unit Input';
-
+    
     return output;
   };
   
@@ -92,9 +91,40 @@ function ConvertHandler() {
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     let result;
+
+    const isInvalidNumber = initNum === 'Invalid Input' 
+          || initNum === 'No Numerical Input'
+          && returnNum === 'Unknown Unit Input';
+
+    const isInvalidUnit = initUnit === 'Unknown Unit Input' 
+          && returnNum === 'Unknown Unit Input'
+          && returnUnit === 'Unknown Unit Input';
+
+    const isNoNumber = initNum === 'No Numerical Input';
+
+console.log('ValidNumber?', !isInvalidNumber, 'ValidUnit?', !isInvalidUnit, 'NoNumber?', isNoNumber);
+
+      if (!isInvalidNumber && isInvalidUnit && !isNoNumber) {
+
+        result = 'Invalid Input Unit';
+
+      } else if (isInvalidNumber && !isInvalidUnit && !isNoNumber) {
+
+        result = 'Invalid Number';
+
+      } else if (isInvalidNumber && isInvalidUnit) {
+
+        result = 'Invalid Number And Unit';
+
+      } else if (!isInvalidUnit && isNoNumber) {
+
+        result = 'No Number';
+
+      } else {
+      result = initNum + initUnit + ' converts to '
+      + returnNum + ' ' + returnUnit;
+    }
     
-    result = '' + initNum + ' ' + units[initUnit][0] + ' converts to '
-      + returnNum + ' ' + units[returnUnit][0];
     return result;
   };
   
