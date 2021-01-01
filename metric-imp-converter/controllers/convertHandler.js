@@ -28,7 +28,7 @@ function ConvertHandler() {
     if (/\/.*\//.test(result)) 
       result = 'Invalid Input';
     if (!result) result = 'No Numerical Input';
-    console.log('GetNumReturn', result);
+    
     return result === 'Invalid Input'
       || result === 'No Numerical Input'
       ? result
@@ -101,8 +101,6 @@ function ConvertHandler() {
           && returnUnit === 'Unknown Unit Input';
 
     const isNoNumber = initNum === 'No Numerical Input';
-
-console.log('ValidNumber?', !isInvalidNumber, 'ValidUnit?', !isInvalidUnit, 'NoNumber?', isNoNumber);
 
       if (!isInvalidNumber && isInvalidUnit && !isNoNumber) {
 
