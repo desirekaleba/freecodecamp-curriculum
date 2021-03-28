@@ -1,10 +1,10 @@
 /*
-*
-*
-*       Complete the API routing below
-*
-*
-*/
+ *
+ *
+ *       Complete the API routing below
+ *
+ *
+ */
 
 'use strict';
 
@@ -12,39 +12,38 @@ const expect = require('chai').expect;
 const ConvertHandler = require('../controllers/convertHandler.js');
 
 module.exports = function (app) {
-  
   let convertHandler = new ConvertHandler();
 
-  app.route('/api/convert')
-    .get(function (req, res){
-      let input = req.query.input;
-      let initNum = convertHandler.getNum(input);
-      let initUnit = convertHandler.getUnit(input);
-      let returnNum = convertHandler.convert(initNum, initUnit);
-      let returnUnit = convertHandler.getReturnUnit(initUnit);
-      let string = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
-      
-      const errors = [
-        'No Number',
-        'Invalid Input Unit',
-        'Invalid Number And Unit',
-        'Invalid Number'
-      ];
+  app.route('/api/convert').get(function (req, res) {
+    let input = req.query.input;
+    let initNum = convertHandler.getNum(input);
+    let initUnit = convertHandler.getUnit(input);
+    let returnNum = convertHandler.convert(initNum, initUnit);
+    let returnUnit = convertHandler.getReturnUnit(initUnit);
+    let string = convertHandler.getString(
+      initNum,
+      initUnit,
+      returnNum,
+      returnUnit
+    );
 
-      if (errors.includes(string)) {
-        res.json({
-          string
-        });
-      } else {
-        res.json({
-          initNum,
-          initUnit,
-          returnNum,
-          returnUnit,
-          string
-        });
-      }
+    const errors = [
+      'No Number',
+      'Invalid Input Unit',
+      'Invalid Number And Unit',
+      'Invalid Number',
+    ];
 
-    });
-    
+    if (errors.includes(string)) {
+      res.send(string);
+    } else {
+      res.json({
+        initNum,
+        initUnit,
+        returnNum,
+        returnUnit,
+        string,
+      });
+    }
+  });
 };
