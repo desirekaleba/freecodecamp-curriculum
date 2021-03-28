@@ -32,9 +32,7 @@ module.exports = function (app) {
       ];
 
       if (errors.includes(string)) {
-        res.json({
-          string
-        });
+        res.send(string);
       } else {
         res.json({
           initNum,
