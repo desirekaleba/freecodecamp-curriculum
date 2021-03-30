@@ -17,7 +17,8 @@ Projects are grouped following their paths under branches. Check the table below
 
 # Certificates
 
-- | -                                                                 | -                                                                                                   |
-  | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-  | ![responsive web design](assets/images/responsive-web-design.JPG) | ![javascript algo and data structures](assets/images/javascript-algorithms-and-data-structures.JPG) | ![frontend libraries](assets/images/frontend-libraries.jpg) |
-  | ![data visualization](assets/images/data-visualization.JPG)       | ![apis and microservices](assets/images/apis-and-microservices.JPG)                                 |
+| Column 1                                                            | column 2                                                                                            |
+| ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| ![responsive web design](assets/images/responsive-web-design.JPG)   | ![javascript algo and data structures](assets/images/javascript-algorithms-and-data-structures.JPG) |
+| ![frontend libraries](assets/images/frontend-libraries.jpg)         | ![data visualization](assets/images/data-visualization.JPG)                                         |
+| ![apis and microservices](assets/images/apis-and-microservices.JPG) | Loading...                                                                                          |
